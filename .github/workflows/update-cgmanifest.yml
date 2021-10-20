@@ -25,9 +25,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Execute script to update cgmanifest
+      - name: Install Ships provider to deal with project.assets.json
         run: |
-          Install-Module -Name dotnet.project.assets
+          Install-Module -Name dotnet.project.assets -force
       - name: Execute script to update cgmanifest
         run: |
           ./tools/findMissingNotices.ps1
